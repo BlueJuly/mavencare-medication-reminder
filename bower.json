@@ -1,0 +1,40 @@
+{
+  "name": "medication-reminder",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": ">=1.2.*",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.0.1",
+    "jquery": "~1.11.0",
+    "bootstrap": "~3.3.7",
+    "angular-resource": ">=1.2.*",
+    "angular-cookies": ">=1.2.*",
+    "angular-sanitize": ">=1.2.*",
+    "angular-bootstrap": "~0.11.0",
+    "font-awesome": ">=4.7.0",
+    "lodash": "~2.4.1",
+    "angular-ui-router": "~0.2.10",
+    "moment": "^2.15.2",
+    "howler.js": "howler#^2.0.1",
+    "material-calendar": "^0.2.14",
+    "sc-date-time": "https://github.com/BlueJuly/sc-date-time.git#e1384b2"
+  },
+  "devDependencies": {
+    "angular-mocks": ">=1.2.*",
+    "angular-scenario": ">=1.2.*"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "/css/font-awesome.min.css"
+      ]
+    }
+  }
+}

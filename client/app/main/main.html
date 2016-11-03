@@ -1,0 +1,86 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+      <h1>{{currentTime}}</h1>
+  </div>
+</header>
+<div class="container-fluid">
+ <div class="row">
+    <h2 class="col-lg-6 text-center">{{calendarTitle }}</h2>
+ </div>
+ <div class="row">
+    <div class="col-md-6 text-center">
+    </div>
+   </div>
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-2">
+        
+        <time-date-picker 
+        ng-model="dateValue"
+        ng-change = "onDateChange()"
+        >
+          
+        </time-date-picker>
+        <div ng-repeat ="m in meds">
+          <div class="col-lg-12 text-center" ng-if="m.visualNotify">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                <h2>
+                  {{m.displayTime}}
+                </h2> 
+                </div>
+                <div class="panel-body">
+                  <h3>{{m.name}}</h3>
+                <h3>
+                {{m.dosage}}
+                </h3>
+                <h3>
+                <span ng-if="m.visualNotify" class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="color:red;" ></span> 
+                {{m.completedText}}
+                </h3>
+                </div>
+                  <p><a ng-show="m.showCompleteButton" class="btn btn-primary btn-lg" ng-click="completeMedication(m)" role="button">Complete</a></p>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+    <div class="col-lg-3 col-lg-offset-1 text-center">
+        <div class="panel panel-primary" ng-repeat ="m in meds">
+            <div class="panel-heading">
+            <h2>
+              {{m.displayTime}}
+            </h2> 
+            </div>
+            <div class="panel-body">
+              <h3>{{m.name}}</h3>
+            <h3>
+            {{m.dosage}}
+            </h3>
+            <h3>
+            <span ng-if="m.completed" class="glyphicon glyphicon-ok-circle" style="color:green;" aria-hidden="true"></span>
+            <span ng-if="m.visualNotify" class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="color:red;" ></span> 
+            {{m.completedText}}
+            </h3>
+            </div>
+            
+              <!-- <Button ng-show="m.showCompleteButton" class="btn btn-primary" ng-click="completeMedication(m)">Complete</Button> -->
+              <p><a ng-show="m.showCompleteButton" class="btn btn-primary btn-lg" ng-click="completeMedication(m)" role="button">Complete</a></p>
+                 
+            
+        </div>
+        <!-- <div ng-repeat="m in meds">
+            {{m.time}} {{m.name}} {{m.dosage}}
+        </div> -->
+    </div>
+  </div>
+  <div class="row">
+    
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+      <p>© 2016 Mavencare™, made with <span class="glyphicon glyphicon-heart heart-red"></span> for better healthcare.</p>
+  </div>
+</footer>
